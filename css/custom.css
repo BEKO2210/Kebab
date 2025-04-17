@@ -1,0 +1,107 @@
+/* Custom CSS für Zentrum Pizza und Kebab Haus */
+
+/* Spinner */
+.spinner-custom {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Menü-Bild Größe */
+.menu-item-img {
+    width: 80px;
+}
+
+/* Extras Sektionen */
+.extras-section {
+    display: none;
+}
+
+/* Spinner Stil */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Bestellliste */
+.order-items-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.order-items-list .list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.order-items-list .list-group-item:first-child {
+    border-top: none;
+}
+
+.order-items-list .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.order-items-list h6 {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.order-items-list small {
+    display: block;
+    margin-top: 3px;
+}
+
+/* About Bild Offset */
+.about-img-offset {
+    margin-top: 25%;
+    width: 75%;
+}
+
+/* Bild Cover */
+.img-cover {
+    object-fit: cover;
+}
+
+/* Bestellformular Textarea */
+.order-textarea {
+    height: 180px;
+    min-height: 180px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Adressfelder */
+.order-address-fields, .address-fields {
+    display: none;
+}
+
+/* Adressfelder Wrapper */
+.address-fields-wrapper {
+    display: none;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.address-fields-wrapper.show {
+    display: block;
+}
+
+/* Bestellbutton */
+.order-button {
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Google Maps Karte */
+.map-frame {
+    min-height: 350px;
+    border: 0;
+}
