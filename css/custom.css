@@ -152,3 +152,30 @@ img {
     padding-right: 15px;
     padding-left: 15px;
 }
+
+/* Responsive Restaurant Name */
+.restaurant-name {
+    font-size: 1.8rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+    .restaurant-name {
+        font-size: 1.4rem;
+    }
+    
+    .restaurant-name i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .restaurant-name {
+        font-size: 1.2rem;
+    }
+    
+    .restaurant-name i {
+        font-size: 1rem;
+        margin-right: 0.5rem !important;
+    }
+}
