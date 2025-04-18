@@ -642,90 +642,6 @@
         <!-- Menu End -->
 
 
-        <!-- Reservation Start -->
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="h-100">
-                        <img class="img-fluid w-100 h-100 img-cover" src="img/Zentrum Logo_page-0001.jpg" alt="Zentrum Pizza Logo">
-                    </div>
-                </div>
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Bestellung</h5>
-                        <h1 class="text-white mb-4">Bestellung per WhatsApp</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Ihr Name">
-                                        <label for="name">Ihr Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" placeholder="Ihre Telefonnummer">
-                                        <label for="phone">Ihre Telefonnummer</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="delivery" onchange="toggleAddressFields()">
-                                            <option value="Abholung">Abholung</option>
-                                            <option value="Lieferung" selected>Lieferung</option>
-                                        </select>
-                                        <label for="delivery">Lieferung/Abholung</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="paymentMethod">
-                                            <option value="Bar">Barzahlung</option>
-                                            <option value="EC">EC-Karte</option>
-                                        </select>
-                                        <label for="paymentMethod">Zahlungsmethode</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control order-textarea" placeholder="Ihre Bestellung" id="orderDetails"></textarea>
-                                        <label for="orderDetails">Ihre Bestellung (z.B. 1x Pizza Margherita, 2x Döner)</label>
-                                    </div>
-                                </div>
-                                <div class="col-12" id="addressFieldsContainer">
-                                    <div class="address-fields-wrapper" id="addressFieldsWrapper">
-                                        <div class="row g-3">
-                                            <div class="col-12">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control" id="street" placeholder="Straße und Hausnummer" required>
-                                                    <label for="street">Straße und Hausnummer*</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control" id="zip" placeholder="PLZ" required>
-                                                    <label for="zip">PLZ*</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control" id="city" placeholder="Stadt" required>
-                                                    <label for="city">Stadt*</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="button" onclick="sendWhatsAppOrder()" title="Per WhatsApp bestellen">Per WhatsApp bestellen</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
@@ -733,20 +649,16 @@
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Über uns</h4>
                         <p class="mb-2">"So Frisch. So Lecker!"</p>
-                        <a class="btn btn-link" href="">Über uns</a>
-                        <a class="btn btn-link" href="">Kontakt</a>
-                        <a class="btn btn-link" href="">Bestellung per WhatsApp</a>
-                        <a class="btn btn-link" href="">Datenschutz</a>
-                        <a class="btn btn-link" href="">AGB</a>
+                        <a class="btn btn-link" href="contact.html">Kontakt</a>
+                        <a class="btn btn-link" href="#">Datenschutz</a>
+                        <a class="btn btn-link" href="#">AGB</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Kontakt</h4>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Marktplatz 18, 71691 Freiberg am Neckar</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+49 174 2116095</p>
-                        <p class="mb-2"><i class="fab fa-whatsapp me-3"></i>WhatsApp-Bestellung möglich</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href="" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             <a class="btn btn-outline-light btn-social" href="" title="Instagram"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
@@ -960,6 +872,9 @@
                                     <strong class="fs-5">Gesamtbetrag:</strong>
                                     <strong id="orderTotalPrice" class="text-primary fs-4">0,00€</strong>
                                 </div>
+                                <div class="alert alert-info mb-3">
+                                    <small><i class="bi bi-info-circle me-2"></i> Mindestbestellwert: 15,00€</small>
+                                </div>
                                 <div class="d-grid gap-2 mb-4">
                                     <button type="button" class="btn btn-outline-primary btn-lg" id="addMoreItemsBtn" data-bs-dismiss="modal">
                                         <i class="bi bi-plus-circle"></i> Weitere Gerichte hinzufügen
@@ -1127,7 +1042,7 @@
                 
                 // Bestellformular nicht automatisch öffnen, damit Kunden mehrere Gerichte bestellen können
                 // Stattdessen nur eine Benachrichtigung anzeigen
-                showToast('Gericht zur Bestellung hinzugefügt! Sie können weitere Gerichte hinzufügen.');
+                showToast('<i class="bi bi-check-circle-fill me-2"></i> Gericht zur Bestellung hinzugefügt!<br>Sie können weitere Gerichte hinzufügen.');
             });
             
             // Event-Listener für Lieferauswahl im Bestellformular
@@ -1161,6 +1076,19 @@
             
             // Event-Listener für "Per WhatsApp bestellen" Button
             document.getElementById('sendOrderBtn').addEventListener('click', function() {
+                // Prüfen, ob der Mindestbestellwert erreicht ist
+                let totalPrice = 0;
+                orderItems.forEach(item => {
+                    const priceValue = parseFloat(item.price.replace('€', '').replace(',', '.'));
+                    totalPrice += priceValue * item.quantity;
+                });
+                
+                // Mindestbestellwert von 15€ prüfen
+                if (totalPrice < 15) {
+                    alert('Der Mindestbestellwert beträgt 15€. Bitte fügen Sie weitere Gerichte hinzu.');
+                    return;
+                }
+                
                 sendWhatsAppOrder();
             });
             
@@ -1387,10 +1315,11 @@
         // Funktion zum Anzeigen einer Toast-Nachricht
         function showToast(message) {
             const toast = document.createElement('div');
-            toast.className = 'toast show position-fixed bottom-0 end-0 p-2 bg-primary text-white';
-            toast.style.zIndex = '1000';
+            toast.className = 'toast-notification';
             toast.innerHTML = message;
             document.body.appendChild(toast);
+            
+            // Toast automatisch nach 3 Sekunden entfernen
             setTimeout(function() {
                 toast.remove();
             }, 3000);
