@@ -189,20 +189,11 @@ img {
     z-index: 99;
 }
 
-/* Back to Top Button ganz links unten */
-.left-to-top {
-    right: auto !important;
-    left: 20px !important;
-    bottom: 20px !important;
-    /* Für mobile Geräte ggf. anpassen */
-    z-index: 9999;
-}
-
-@media (max-width: 576px) {
-    .left-to-top {
-        left: 10px !important;
-        bottom: 15px !important;
-    }
+/* Back to Top Button weiter links auf Menü-Seite */
+body.menu-page .back-to-top {
+    left: 10%;
+    right: auto;
+    transform: none;
 }
 
 /* Toast-Benachrichtigung */
@@ -229,47 +220,15 @@ img {
     100% { opacity: 0; transform: translateY(-20px); }
 }
 
-/* Kontaktseite: Werbeblock */
-.contact-promo-box {
-    border: 2px solid #FEA116;
-    border-radius: 12px;
-    padding: 24px 10px;
-    background: #fffbe9;
-    margin-bottom: 24px;
-}
-.contact-promo-box h4 {
-    color: #FEA116;
-    margin-bottom: 10px;
-}
-.contact-promo-box .promo-title {
-    font-size: 1.15em;
-    color: #222;
-    margin-bottom: 6px;
-}
-.contact-promo-box .promo-link {
-    font-size: 1.1em;
-    color: #FEA116;
-    text-decoration: underline;
-    margin-bottom: 6px;
-    display: inline-block;
-}
-
-/* Indexseite: Footer-Hinweis */
-.footer-creator {
-    font-size: 0.85em;
-    color: #bbb;
-    display: inline-block;
+/* Footer-Styles */
+footer {
+    font-size: 10px !important;
     text-align: center;
-    width: 100%;
-}
-.footer-creator a {
-    color: #bbb;
-    text-decoration: underline;
+    margin-top: 40px;
+    color: #888;
 }
 
-/* AGB-Seite: Inhaltsbereich */
-.agb-content {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+footer a {
+    color: #888;
+    text-decoration: underline;
 }
