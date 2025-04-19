@@ -189,6 +189,22 @@ img {
     z-index: 99;
 }
 
+/* Back to Top Button ganz links unten */
+.left-to-top {
+    right: auto !important;
+    left: 20px !important;
+    bottom: 20px !important;
+    /* Für mobile Geräte ggf. anpassen */
+    z-index: 9999;
+}
+
+@media (max-width: 576px) {
+    .left-to-top {
+        left: 10px !important;
+        bottom: 15px !important;
+    }
+}
+
 /* Toast-Benachrichtigung */
 .toast-notification {
     position: fixed;
@@ -211,4 +227,42 @@ img {
     10% { opacity: 1; transform: translateY(0); }
     80% { opacity: 1; transform: translateY(0); }
     100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Kontaktseite: Werbeblock */
+.contact-promo-box {
+    border: 2px solid #FEA116;
+    border-radius: 12px;
+    padding: 24px 10px;
+    background: #fffbe9;
+    margin-bottom: 24px;
+}
+.contact-promo-box h4 {
+    color: #FEA116;
+    margin-bottom: 10px;
+}
+.contact-promo-box .promo-title {
+    font-size: 1.15em;
+    color: #222;
+    margin-bottom: 6px;
+}
+.contact-promo-box .promo-link {
+    font-size: 1.1em;
+    color: #FEA116;
+    text-decoration: underline;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+/* Indexseite: Footer-Hinweis */
+.footer-creator {
+    font-size: 0.85em;
+    color: #bbb;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.footer-creator a {
+    color: #bbb;
+    text-decoration: underline;
 }
