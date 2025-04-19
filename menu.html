@@ -1428,16 +1428,15 @@
                                 <div class="form-floating">
                                     <select class="form-select" id="orderDelivery" onchange="toggleAddressFields()">
                                         <option value="Abholung">Abholung</option>
-                                        <option value="Lieferung" selected>Lieferung</option>
+                                        <option value="Lieferung" disabled>Lieferung (ab 15€)</option>
                                     </select>
                                     <label for="orderDelivery">Lieferung/Abholung</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select" id="orderPaymentMethod">
+                                    <select class="form-select" id="orderPaymentMethod" disabled>
                                         <option value="Bar">Bar</option>
-                                        <option value="EC-Karte">EC-Karte</option>
                                     </select>
                                     <label for="orderPaymentMethod">Zahlungsmethode</label>
                                 </div>
@@ -1679,7 +1678,7 @@
                 
                 // Modal schließen
                 const orderFormModal = bootstrap.Modal.getInstance(document.getElementById('orderFormModal'));
-                orderFormModal.hide();
+                if (orderFormModal) orderFormModal.hide();
             });
             
             // Funktion zum Anzeigen einer Toast-Nachricht
@@ -1894,6 +1893,34 @@
             }
         });
         document.body.appendChild(orderButton);
+        
+        // Lieferung erst ab 15€ aktivieren
+        function updateDeliveryOption() {
+            let totalPrice = 0;
+            orderItems.forEach(item => {
+                const priceValue = parseFloat(item.price.replace('€', '').replace(',', '.'));
+                totalPrice += priceValue * item.quantity;
+            });
+            const deliveryRadio = document.getElementById('orderDeliveryDelivery');
+            if (deliveryRadio) {
+                deliveryRadio.disabled = totalPrice < 15;
+                if (deliveryRadio.disabled && deliveryRadio.checked) {
+                    document.getElementById('orderDeliveryPickup').checked = true;
+                }
+            }
+        }
+        
+        // Rufe updateDeliveryOption nach jeder Änderung des Warenkorbs auf:
+        function updateOrderItemsList() {
+            // ... bestehender Code ...
+            // Gesamtpreis aktualisieren
+            const orderTotalPrice = document.getElementById('orderTotalPrice');
+            orderTotalPrice.textContent = totalPrice.toFixed(2).replace('.', ',') + '€';
+            updateDeliveryOption(); // <--- HIER
+        }
+        
+        // Initial auch beim Laden der Seite:
+        document.addEventListener('DOMContentLoaded', updateDeliveryOption);
     </script>
 </body>
 
