@@ -1492,8 +1492,8 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <select class="form-select" id="orderDelivery" onchange="toggleAddressFields()">
-                                        <option value="Abholung">Abholung</option>
-                                        <option value="Lieferung" selected>Lieferung</option>
+                                        <option value="Abholung" selected>Abholung</option>
+                                        <option value="Lieferung">Lieferung</option>
                                     </select>
                                     <label for="orderDelivery">Lieferung/Abholung</label>
                                 </div>
@@ -1912,6 +1912,16 @@
                 const priceValue = parseFloat(item.price.replace('€', '').replace(',', '.'));
                 totalPrice += priceValue * item.quantity;
             });
+            
+            if (delivery === 'Lieferung') {
+                const city = document.getElementById('orderCity').value;
+                const deliveryFee = getSelectedCityFee();
+                totalPrice += deliveryFee;
+                message += `%0A*Lieferung nach:* ${city}`;
+                message += `%0A*Liefergebühr:* ${deliveryFee.toFixed(2).replace('.', ',')}€`;
+            } else {
+                message += `%0A*Abholung*`;
+            }
             
             message += `%0A*Gesamtbetrag:* ${totalPrice.toFixed(2).replace('.', ',')}€`;
             
